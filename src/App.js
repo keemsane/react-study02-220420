@@ -19,12 +19,16 @@ import Friends from './address';
 function App() {
   return (
     <div>
+      <h1>Profile</h1>
+      <hr></hr>
       <Info01 />
+      <hr></hr>
       <Friends
         name = "Cheolsoo"
         gender = "MALE"
         email = "FEH2O @ BSN.CO.KR"
       />
+      <hr></hr>
       <Friends
         name = "Yoory"
         gender = "FEMALE"
