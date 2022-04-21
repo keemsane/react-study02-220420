@@ -5,6 +5,11 @@ import React from "react";
 // jsx는 xml이 합쳐진 형태이기 때문에 시작태그 끝태그를 모두 넣어줘야한다.
 // 참고. xml는 시작태그 끝태그 모두 필요로 한다.
 // <img> → <img></img>, <img/>
+/**
+ * 
+ * @param {*} props 
+ * @returns 
+ */
 function Friends(props) {
 
     // const name = props.name
