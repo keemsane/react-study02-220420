@@ -49,7 +49,7 @@ class App03 extends React.Component {
   };
 
   reset = () => {
-    this.setState({count : this.state.count});
+    this.setState({count : this.state.count = 10});
     console.log("RESET");
   };
   render() {
