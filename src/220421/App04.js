@@ -27,7 +27,10 @@ class App04 extends React.Component {
             this.setState({ channel : this.state.channel - 1 })
         }
     };
-    volup = () => {
+    volup = () => {        
+        if (this.state.volume == 12) {
+            alert ("THE VOLUME IS TOO LOUD, PLZ VOLUME DOWN")
+        }
         if (this.state.volume >= 15) {
             this.setState({ volume : this.state.volume = 15})
         } else {
@@ -44,15 +47,15 @@ class App04 extends React.Component {
     render() {
         return (
             <div>
-                <h1>CHANNEL {this.state.channel}</h1>
+                <h1>CHANNEL NOW ON {this.state.channel}</h1>
                 <h2>VOLUME {this.state.volume}</h2>
                 <div>
-                    <button onClick={this.chup}> + CH UP </button>
                     <button onClick={this.chdown}> - CH DOWN </button>
+                    <button onClick={this.chup}> + CH UP </button>                    
                 </div>
                 <div>
-                    <button onClick={this.volup}> + VOL UP </button>
                     <button onClick={this.voldown}> - VOL DOWN </button>
+                    <button onClick={this.volup}> + VOL UP </button>                    
                 </div>
             </div>
         );
