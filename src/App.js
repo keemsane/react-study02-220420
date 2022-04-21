@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Info01 from './info01';
+import Info from './info01';
 import Friends from './address';
 
-// 문제 1) 컴포넌트 componenet01.js 파일을 생성
+// 문제 1) 컴포넌트 info.01.js 파일을 생성
 //       → 자신의 간단한 정보를 출력하는 페이지 화면에 출력
 // 참고 1) src 폴더 아래에 components01.js 생성
 // 참고 2) 이름, 성별, 나이, 이메일, 주소 출력
@@ -21,7 +21,7 @@ function App() {
     <div>
       <h1>Profile</h1>
       <hr></hr>
-      <Info01 />
+      <Info />
       <hr></hr>
       <Friends
         name = "Cheolsoo"
