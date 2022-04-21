@@ -8,10 +8,11 @@ import PropTypes from 'prop-types';
  * @param {*} 음식 이름
  * @returns 내가 좋아하는 음식 이름
  */
-function Food({ name, picture }) {
+function Food({ name, picture, rating }) {
   return (
     <div>
       <h2>I LIKE {name}</h2>
+      <h4> {rating} / 5.0 </h4>
       <img className="imgSize" src={picture} alt={name} />
     </div>
   );
@@ -25,4 +26,5 @@ export default Food;
 Food.propTypes = {
     name : PropTypes.string.isRequired,
     picture : PropTypes.string.isRequired,
-}
+    rating : PropTypes.number
+};

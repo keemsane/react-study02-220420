@@ -18,27 +18,32 @@ const foodLike = [
     {
         id : 1,
         name : "KEEMCHY",
-        image : "http://img.choroc.com/newshop/goods/024444/024444_1.jpg",        
+        image : "http://img.choroc.com/newshop/goods/024444/024444_1.jpg",
+        rating : 5.0,        
     },
     {
         id : 2,
         name : "LAMIEN",
         image : "https://upload.wikimedia.org/wikipedia/commons/a/a9/%EB%8F%88%EC%BD%94%EC%B8%A0%EB%9D%BC%EB%A9%98.jpg",
+        rating : 4.3,
     },
     {
         id : 3,
         name : "SAMGIOPSAL",
         image : "https://cdn.mindgil.com/news/photo/202103/70839_7148_1250.jpg",
+        rating : 4.1,
     },
     {
         id : 4,
         name : "CHUKKUMY",
         image : "https://s3.ap-northeast-2.amazonaws.com/event-localnaeil/FileData/Article/202002/edfb543b-a18d-49f5-9aa7-12d2030da9ce.jpg",
+        rating : 3.5,
     },
     {
         id : 5, 
         name : "JOKBAL",
         image : "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FWbMEr%2Fbtq329TgSg3%2FVXkAaCxbs1XbkHjDPQAWv1%2Fimg.png",
+        rating : 4.7,
     },
     
 ]   // foodLike 배열
@@ -61,6 +66,7 @@ function App02() {
             key = {dish.id}
             name = {dish.name}
             picture = {dish.image}
+            rating = {dish.rating}
             />            
       ))}
       
