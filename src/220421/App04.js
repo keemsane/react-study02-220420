@@ -21,28 +21,30 @@ class App04 extends React.Component {
         }        
     };
     chdown = () => {
-        if (this.state.channel < 2) {
+        if (this.state.channel <= 1) {
             this.setState ({ channel : this.state.channel = 15 })
         } else {
             this.setState({ channel : this.state.channel - 1 })
         }
     };
+    // 선생님 방법으로 변경
     volup = () => {        
         if (this.state.volume == 12) {
             alert ("THE VOLUME IS TOO LOUD, PLZ VOLUME DOWN")
         }
-        if (this.state.volume >= 15) {
-            this.setState({ volume : this.state.volume = 15})
-        } else {
-            this.setState({ volume : this.state.volume + 1})
-        }
+        this.setState({ volume : this.state.volume + 1});
+        if (this.state.volume > 14) {
+            this.setState({ volume : 15})
+        } 
     };
     voldown = () => {
-        if (this.state.volume <= 0) {
-            this.setState({ volume : this.state.volume = 0})
-        } else {
-            this.setState({ volume : this.state.volume - 1})
+        if (this.state.volume < 1) {
+            alert ("THE VOLUME IS MUTED")
         }
+        this.setState({ volume : this.state.volume - 1});
+        if (this.state.volume < 1) {
+            this.setState({ volume : 0 })
+        } 
     };
     render() {
         return (
