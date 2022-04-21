@@ -32,8 +32,18 @@ class App03 extends React.Component {
 // 그냥 this.state.count++; 하면 작동 안함
 // setState() : state 객체가 가지고 있는 데이터를 수정하는 함수
 // setState(요소명 및 연산식)
+
+// setState()는 비동기로 동작함, 원하는 순간에 데이터의 변경을 보장하지 못함
+// └- setState() 매개변수로 함수를 넘기면 정상적으로 사용 가능.
+
   add = () => {
-    this.setState({count : this.state.count + 1});
+    // setState() 매개변수에 그냥 state 데이터를 넣은 것
+    // this.setState({count : this.state.count + 1});
+    
+    // setState()의 매개변수에 함수로 넣은 것
+    this.setState((current) => ({
+      count : current.count + 1,
+    }));
     console.log('Add');
   };
 
@@ -44,12 +54,21 @@ class App03 extends React.Component {
 //   };
 
   minus = () => {
-    this.setState({count : this.state.count - 1});
+    // this.setState({count : this.state.count - 1});
+
+    // setState() 매개변수에 함수 넣은 것
+    this.setState((current) => ({
+      count: current.count - 1,
+    }));
     console.log('Minus');
   };
 
   reset = () => {
-    this.setState({count : this.state.count = 10});
+    // this.setState({count : this.state.count = 10});
+
+    this.setState((current) => ({
+      count : current.count = 10,
+    }));
     console.log("RESET");
   };
   render() {

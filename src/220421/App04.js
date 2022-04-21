@@ -13,18 +13,42 @@ class App04 extends React.Component {
         channel : 1,
         volume : 0,
     }
-    chup = () => {
-        if (this.state.channel > 14) {
-            this.setState({ channel : this.state.channel = 1 })
-        } else {
-            this.setState({ channel : this.state.channel + 1 })
-        }        
+    chup = () => {        
+        
+        // if (this.state.channel > 14) {
+        //     this.setState({ channel : this.state.channel = 1 })
+        // } else {
+        //     this.setState({ channel : this.state.channel + 1 })
+        // }        
+
+        // setState() 매개변수에 함수 넣기
+        this.setState((current) => ({
+            channel: current.channel + 1,
+        }));
+
+        if (this.state.channel >= 15) {
+            this.setState(() => ({
+                channel : 1,
+            }));
+        }
     };
+
     chdown = () => {
+        
+        // if (this.state.channel <= 1) {
+        //     this.setState ({ channel : this.state.channel = 15 })
+        // } else {
+        //     this.setState({ channel : this.state.channel - 1 })
+        // }
+
+        this.setState((current) => ({
+            channel : current.channel - 1,
+        }));
+
         if (this.state.channel <= 1) {
-            this.setState ({ channel : this.state.channel = 15 })
-        } else {
-            this.setState({ channel : this.state.channel - 1 })
+            this.setState(() => ({
+                channel : 15,
+            }));
         }
     };
     // 선생님 방법으로 변경
@@ -32,19 +56,45 @@ class App04 extends React.Component {
         if (this.state.volume == 12) {
             alert ("THE VOLUME IS TOO LOUD, PLZ VOLUME DOWN")
         }
-        this.setState({ volume : this.state.volume + 1});
+
+        if (this.state.volume == 15) {
+            alert ("THE VOLUME IS MAX, PLZ VOLUME DOWN")
+        }
+
+        // this.setState({ volume : this.state.volume + 1});
+        // if (this.state.volume > 14) {
+        //     this.setState({ volume : 15})
+        // } 
+
+        this.setState((current) => ({
+            volume : current.volume + 1,
+        }));
+
         if (this.state.volume > 14) {
-            this.setState({ volume : 15})
-        } 
+            this.setState(() => ({
+                volume : 15
+            }));
+        }
     };
     voldown = () => {
         if (this.state.volume < 1) {
             alert ("THE VOLUME IS MUTED")
         }
-        this.setState({ volume : this.state.volume - 1});
+
+        // this.setState({ volume : this.state.volume - 1});
+        // if (this.state.volume < 1) {
+        //     this.setState({ volume : 0 })
+        // } 
+
+        this.setState((current) => ({
+            volume : current.volume - 1,
+        }));
+
         if (this.state.volume < 1) {
-            this.setState({ volume : 0 })
-        } 
+            this.setState(() => ({
+                volume : 0
+            }));
+        }
     };
     render() {
         return (
