@@ -26,3 +26,8 @@ class App06 extends React.Component {
 }
 
 export default App06;
+
+
+// 문제 2) state 객체에 변수를 추가하여 해당 변수의 값을 1초마다 확인 → 해당 변수의 값이 0이 될 때 화면에 출력하는 글자는 We Are Ready!! 로 변경하는 프로그램을 작성
+// 참고 1) 로딩 중일때는 Loading... x 로 화면에 글자를 출력. (x는 숫자)
+// 참고 2) 
