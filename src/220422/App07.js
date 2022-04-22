@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import axios from 'axios';
+import Movie03 from './Movie03';
 
 class App07 extends React.Component {
   state = {
@@ -9,9 +10,35 @@ class App07 extends React.Component {
   };
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, movies } = this.state;
     // 변수 isLoading의 데이터 값에 따라 화면에 출력하는 문구를 변경
-    return <div>{isLoading ? 'Loading....' : 'We are READY!!'}</div>;
+    return (
+      <section className="container">
+        {isLoading ? (
+          <div className="loader">
+            <span className="loader-text">Loading...</span>
+          </div>
+        ) : (
+          <div className="movies">
+            {movies.map((movie) => {
+              // console.log(movie);
+              return (
+                <Movie03
+                  //   데이터를 넘길 때 구분자로 key를 반드시 넣어줘야 오류가 나지 않는다.
+                  // movie.id도 유일하므로 key와 id를 같은 데이터로 넣어주면 된다.
+                  key={movie.id}
+                  id={movie.id}
+                  year={movie.year}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                />
+              );
+            })}
+          </div>
+        )}
+      </section>
+    );
   }
 
   // async : 비동기 방식임을 알려줌
@@ -26,10 +53,10 @@ class App07 extends React.Component {
   // async 키워드 사용 시 해당 함수 안에 비동기 처리가 필요한 메서드가 있음을 알려줌.
   // await 키워드 사용 시 해당 메서드의 비동기 처리가 완료될 때까지 로직을 실행하지 않고 기다림.
 
-//   getMovies = async function () {
-//     await axios.get('주소');
-//   }
-//   ↑ 원래 모양
+  //   getMovies = async function () {
+  //     await axios.get('주소');
+  //   }
+  //   ↑ 원래 모양
   getMovies = async () => {
     try {
       // ES6 객체 분해 할당
@@ -47,8 +74,8 @@ class App07 extends React.Component {
         data: {
           data: { movies },
         },
-      } = await axios.get('https://yts.mx/api/v2/list_movies.json');
-      console.log(movies);
+      } = await axios.get('https://yts-proxy.now.sh/list_movies.json?limit=5&sort_by=rating');
+      //   console.log(movies);
       //   가지고 온 movies 데이터를 movies[] 배열에 setState로 넣어줌.
       this.setState({ movies: movies, isLoading: false });
 
