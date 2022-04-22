@@ -8,7 +8,8 @@ import reportWebVitals from './reportWebVitals';
 // import App04 from './220421/App04';
 // import App05 from './220421/App05';
 // import App06 from './220421/App06';
-import App06_1 from './220421/App06_1';
+// import App06_1 from './220421/App06_1';
+import App07 from './220422/App07';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +20,8 @@ root.render(
     {/* <App04 /> */}
     {/* <App05 /> */}
     {/* <App06 /> */}
-    <App06_1 />
+    {/* <App06_1 /> */}
+    <App07 />
   </React.StrictMode>,
 );
 
