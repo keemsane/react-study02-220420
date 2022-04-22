@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './App07.css';
 import axios from 'axios';
 import Movie03 from './Movie03';
 
@@ -20,6 +20,8 @@ class App07 extends React.Component {
           </div>
         ) : (
           <div className="movies">
+              <h1>THE MOVIE FESTA</h1>
+              <hr/>
             {movies.map((movie) => {
               // console.log(movie);
               return (
@@ -27,7 +29,7 @@ class App07 extends React.Component {
                   //   데이터를 넘길 때 구분자로 key를 반드시 넣어줘야 오류가 나지 않는다.
                   // movie.id도 유일하므로 key와 id를 같은 데이터로 넣어주면 된다.
                   key={movie.id}
-                  id={movie.id}
+                //   id={movie.id}
                   year={movie.year}
                   title={movie.title}
                   summary={movie.summary}
