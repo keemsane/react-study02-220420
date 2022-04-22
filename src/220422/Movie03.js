@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Movie03.css'
 
 // props 대신 {객체 분할}로 바로 보내기~
 function Movie03({ id, year, title, summary, poster }) {
